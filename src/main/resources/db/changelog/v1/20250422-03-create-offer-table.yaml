@@ -1,0 +1,59 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: agasiyev
+      changes:
+        - createTable:
+            tableName: offer
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: amount
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: term
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: interest
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: accepted
+                  type: boolean
+              #                  constraints:
+              #                    nullable: false
+              - column:
+                  name: credit_id
+                  type: bigint
+              #                  constraints:
+              #                  nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+#                    updatable: false
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+
+#  - changeSet:
+#      id: 2
+#      author: agasiyev
+#      changes:
+#        - addForeignKeyConstraint:
+#            baseTableName: offer
+#            baseColumnNames: credit_id
+#            referencedTableName: credit
+#            referencedColumnNames: id
+#            constraintName: fk_offer_credit_id
