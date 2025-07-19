@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  pg:
+    container_name: created_manager
+    hostname: pg
+    image: postgres
+    ports:
+      - "5437:5432"
+    volumes:
+      - /var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 1234
+#    networks:
+#      - library-books-network
+#networks:
+#  library-books-network:
